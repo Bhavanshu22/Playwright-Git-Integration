@@ -21,7 +21,7 @@ jobs:
       #run: SECRET_KEY=systems npm run test_demo_cr_hd # npx playwright test
       env:
           SECRET_KEY: systems
-      run: npm run test_demo_cr_hd
+      run: npm run test_demo_cr_hl
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
