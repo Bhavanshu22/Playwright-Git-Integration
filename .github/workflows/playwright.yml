@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: $env:SECRET_KEY="systems"; npm run test_demo_cr_hd # npx playwright test
+      run: SECRET_KEY=systems npm run test_demo_cr_hl # npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
