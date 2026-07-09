@@ -17,6 +17,11 @@ export class LoginPage{
     
         await this.usernameInput.fill(username)
         await this.passwordInput.fill(password)
-        await this.loginButton.click()
+        // await this.loginButton.click()
+
+        await Promise.all([
+        this.page.waitForLoadState('networkidle'),
+        this.loginButton.click()
+    ]);
     }
 }

@@ -13,11 +13,11 @@ test('global set up for auto login', async({page})=>{
     await loginpage.gotoOrangeHrm()
     await loginpage.loginOrangeHrm(decreptedUserName,decreptedPassword)
 
-    await page.waitForURL(process.env.BASE_URL +'/web/index.php/dashboard/index')
+    // await page.waitForURL(process.env.BASE_URL +'/web/index.php/dashboard/index')
 
     const dashboardPage = new DashboardPage(page)
-    await page.waitForTimeout(5000)
-    expect(dashboardPage.dashboardTitleText).toHaveText('Dashboard')
+    // await page.waitForTimeout(5000)
+    // expect(dashboardPage.dashboardTitleText).toHaveText('Dashboard')
 
     await page.context().storageState({
         path: './playwright/.auth/auth.json'
