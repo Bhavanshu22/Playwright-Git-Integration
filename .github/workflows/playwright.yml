@@ -19,8 +19,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       #run: SECRET_KEY=systems npm run test_demo_cr_hd # npx playwright test
-       env: SECRET_KEY: systems
-       run: npm run test_demo_cr_hl
+      env:
+          SECRET_KEY: systems
+      run: npm run test_demo_cr_hd
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
