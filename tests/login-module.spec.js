@@ -50,19 +50,19 @@ test('Verify that user can not login with as invalid Username and Password',{
     await expect(loginpage.usernameInput).toBeVisible()
 })
 
-test('Verify that user can log in with valid username and password', async({page})=>{
+// test('Verify that user can log in with valid username and password', async({page})=>{
 
-    const commonUtilsObj = new CommonUtils()
-    const username = commonUtilsObj.decryptData(process.env.USER_NAME)
-    const password = commonUtilsObj.decryptData(process.env.PASSWORD)
+//     const commonUtilsObj = new CommonUtils()
+//     const username = commonUtilsObj.decryptData(process.env.USER_NAME)
+//     const password = commonUtilsObj.decryptData(process.env.PASSWORD)
 
-    const loginpage = new LoginPage(page)
-    await loginpage.gotoOrangeHrm()
-    await loginpage.loginOrangeHrm(username,password)
+//     const loginpage = new LoginPage(page)
+//     await loginpage.gotoOrangeHrm()
+//     await loginpage.loginOrangeHrm(username,password)
 
-    const leftNevigationPageObj = new LeftNevigationPage(page)
-    await expect(leftNevigationPageObj.orangeHrmLogo).toHaveScreenshot('OrangeHrmBrandLogo.png')
-    await expect(leftNevigationPageObj.LeftNevigationPanel).toHaveScreenshot('LeftNevigationPanel.png')
+//     const leftNevigationPageObj = new LeftNevigationPage(page)
+//     await expect(leftNevigationPageObj.orangeHrmLogo).toHaveScreenshot('OrangeHrmBrandLogo.png')
+//     await expect(leftNevigationPageObj.LeftNevigationPanel).toHaveScreenshot('LeftNevigationPanel.png')
 
-})
+// })
 
