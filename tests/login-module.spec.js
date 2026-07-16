@@ -50,6 +50,18 @@ test('Verify that user can not login with as invalid Username and Password',{
     await expect(loginpage.usernameInput).toBeVisible()
 })
 
+test('Verify that user can not login with as invalid Username and Password',{
+    tag:['@UI', '@DEV']
+}, async({page})=>{
+
+    const loginpage = new LoginPage(page)
+    await loginpage.gotoOrangeHrm()
+    await loginpage.loginOrangeHrm(loginModuleData.wrong_username,loginModuleData.wrong_password)
+
+    await expect(loginpage.invalidErrorMessage).toHaveText(loginModuleData.invalid_credential_text)
+    await expect(loginpage.usernameInput).toBeVisible()
+})
+
 // test('Verify that user can log in with valid username and password', async({page})=>{
 
 //     const commonUtilsObj = new CommonUtils()
